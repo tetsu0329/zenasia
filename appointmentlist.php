@@ -4,7 +4,7 @@
 	<div class="columns">
 		<div class="column">
 			<div style="padding-bottom: 10px;">
-				<b class="has-text-info"> Appointment List</b>
+				<!-- <b class="has-text-info"> Appointment List</b> -->
 			</div>
 			<section class="info-tiles">
 				<div class="tile is-ancestor has-text-centered">
