@@ -3,8 +3,8 @@ session_start();
 
 if (!isset($_SESSION['email'])) {
 	
-	 echo "Access Denied!";
-	exit;
+	//  echo "Access Denied!";
+	// exit;
 	// $idd = $_SESSION['email'];
 	
 

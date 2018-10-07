@@ -1,4 +1,6 @@
-
+<?php
+  include ("connection/connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">

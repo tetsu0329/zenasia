@@ -83,6 +83,7 @@
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -126,7 +127,11 @@
 						  <th><center>EMAIL ADDRESS</center></th>
 						  <th><center>ACTIONS</center></th>
 						</tr>
+						<?php
+							$users = mysqli_query($conn, "SELECT * FROM accounts");
+							while($rows = mysqli_fetch_assoc($users)){
 
+						?>
 						<tr>
 						  <td>Dummy name</td>
 						  <td>dummyemail@email.com</td>
@@ -153,6 +158,9 @@
 								<button class="w3-button button">DELETE</button>
 						  </td>
 						</tr>
+						<?php
+							}
+						?>
 					</table>
 					</div>
 	          </div>

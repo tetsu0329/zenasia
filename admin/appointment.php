@@ -1,4 +1,6 @@
-<?php include ("../admin/navigation.php"); ?>
+<?php 
+	include ("../admin/navigation.php"); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,6 +84,7 @@
 		.container4{
 			width:24.99999%;
 		}
+	}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -95,24 +98,32 @@
 					<table class="table">
 						<tr>
 						  <th><center>TRANSACTION ID</center></th>
-						  <th class="big">FULLNAME</th>
-						  <th><center>SERVICE</center></th>
+						  <th >FULLNAME</th>
+						  <th ><center>SERVICE</center></th>
 						  <th><center>DATE</center></th>
 						  <th><center>TIME</center></th>
 						  <th><center>STATUS</center></th>
 						  <th><center>ACTION</center></th>
 						</tr>
+						<?php
+							$query = mysqli_query($conn, "SELECT * FROM appointment");
+							while($rows = mysqli_fetch_assoc($query)){
+
+						?>
 						<tr>
-						  <td><center>001</center></td>
-						  <td>Dummy name</td>
-						  <td><center>Massage</center></td>
-						  <td><center>01/01/01</center></td>
-						  <td><center>20:00</center></td>
-						  <td><center>PENDING</center></td>
+						  <td><center><?php echo $rows['transacId'] ?></center></td>
+						  <td><?php echo $rows['fullname'] ?></td>
+						  <td><center><?php echo $rows['services'] ?></center></td>
+						  <td><center><?php echo $rows['dates'] ?></center></td>
+						  <td><center><?php echo $rows['hours'] ?></center></td>
+						  <td><center><?php echo $rows['status'] ?></center></td>
 						  <td>
-								<center><button class="w3-button button">CANCEL</button></center>
-							</td>
+							<center><button class="w3-button button">CANCEL</button></center>
+						  </td>
 						</tr>
+						<?php	
+							}
+						?>
 					</table>
 					</div>
 	          </div>
