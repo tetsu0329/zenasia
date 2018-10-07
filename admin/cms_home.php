@@ -20,7 +20,7 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
+		border-top: 10px solid #433124;
 		padding:5%;
 	}
 
@@ -81,25 +81,19 @@
 			<div class="container1" style="margin-top: 10px;">
 
 	          <div class="wcontainer box">
-	           <h5 class="number">HOME UPDATE</h5>
 	            <div class="w3-responsive">
 					<table class="table">
 						<tr>
-						  <th><center>Image</center></th>
-						  <th class="big"><center>Description</center></th>
-						  <th><center>Description</center></th>
+						  <th class="big"><center>LOGO</center></th>
+						  <th><center>ACTIONS</center></th>
 						</tr>
 						<tr>
-						  <td><img src="images/zenlogo.png" width="100%;"></td>
-						  <td>DummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummy</td>
-						  <td><center><button class="w3-button btncolorgreen">SAVE</button></center></td>
+						  <td><center><img src="images/zenlogo.png" width="50%;"></center></td>
+						  <td><center>
+						  	<button class="w3-button button">UPLOAD</button><br><br>
+						  	<button class="w3-button button">SAVE</button>
+						  </center></td>
 						</tr>
-						<tr>
-						  <td><img src="images/zenlogo.png" width="100%;"></td>
-						  <td>DummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummy</td>
-						  <td><center><button class="w3-button btncolorblue">SAVE</button></center></td>
-						</tr>
-					</table>
 					</div>
 	          </div>
         	</div>

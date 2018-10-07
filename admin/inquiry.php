@@ -20,7 +20,7 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
+		border-top: 10px solid #433124;
 		padding:5%;
 	}
 
@@ -61,13 +61,20 @@
 		display:block;
 		overflow-x:auto;
 	}
-
-	 .btncolorgreen{
-    background: lightgreen;
-  }
-  .btncolorblue{
-    background: lightblue;
-  }
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
+.modalcont{
+		padding: 5%;
+	}
+	textarea{
+		resize: none;
+	}
 @media (min-width:601px){
 		.container2{
 			width:49.99999%;
@@ -93,13 +100,56 @@
 						  <th><center>INQUIRY NO.</center></th>
 						  <th class="big"><center>SENDER</center></th>
 						  <th><center>MESSAGE STATUS</center></th>
-						  <th><center>ACTIONS</center></th>
+						  <th class="big"><center>ACTIONS</center></th>
 						</tr>
 						<tr>
 						  <td><center>001</center></td>
 						  <td>Dummy name</td>
 						  <td><center>Read</center></td>
-						  <td><center><button class="w3-button btncolorgreen">EDIT</button></center></td>
+						  <td>
+						  	<center><button onclick="document.getElementById('view').style.display='block'"
+								class="w3-button button">VIEW</button></center>
+
+								<!-- The Modal -->
+								<div id="view" class="w3-modal">
+								  <div class="w3-modal-content">
+								    <div class="w3-container modalcont">
+								      <span onclick="document.getElementById('view').style.display='none'" 
+								      class="w3-button w3-display-topright">&times;</span>
+								      <h5>VIEW INQUIRY</h5>
+								      <hr>
+								      <h5><b>Sender:</b>&nbsp;Dummy name</h5>
+								      <h5><b>Email Address:</b>&nbsp;Dummy email</h5>
+								      <h5><b>Subject:</b>&nbsp;Dummy subject</h5>
+								      <h5><b>Date:</b>&nbsp;Dummy subject</h5>
+								      <h5><b>Message:</b></h5>
+								      <h5>Dummy msg msg msg msg msg msg msg</h5>
+								    </div>
+								  </div>
+								</div>
+								<br>
+							<center><button onclick="document.getElementById('reply').style.display='block'"
+								class="w3-button button">REPLY</button></center>
+
+								<!-- The Modal -->
+								<div id="reply" class="w3-modal">
+								  <div class="w3-modal-content">
+								    <div class="w3-container modalcont">
+								      <span onclick="document.getElementById('reply').style.display='none'" 
+								      class="w3-button w3-display-topright">&times;</span>
+								      <h5>REPLY INQUIRY</h5>
+								      <hr>
+								      <h5><b>Reciepient:</b>&nbsp;Dummy email</h5>
+								      <h5><b>Message:</b></h5>
+								      <h5><textarea class="w3-input"></textarea></h5>
+								      <br>
+								      <center><button class="w3-button button">REPLY</button></center>
+								    </div>
+								  </div>
+								</div>
+								<br>
+								<center><button class="w3-button button">DELETE</button></center>
+						  </td>
 						</tr>
 						
 					</table>

@@ -20,7 +20,7 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
+		border-top: 10px solid #433124;
 		padding:5%;
 	}
 
@@ -62,12 +62,14 @@
 		overflow-x:auto;
 	}
 
-	.btncolorgreen{
-		background: lightgreen;
-	}
-	.btncolorblue{
-		background: lightblue;
-	}
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
 @media (min-width:601px){
 		.container2{
 			width:49.99999%;
@@ -96,42 +98,42 @@
 
 						<tr>
 						  <td><center>Contact Person</center></td>
-						  <td>Dummy name</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy name"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Address</center></td>
-						  <td>Dummy address</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy address"></td>
 						</tr>
 						
 						<tr>
 						  <td><center>Email Address</center></td>
-						  <td>Dummy email address</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy email"></td>
 						</tr>
 
 						<tr>
-						  <td><center>Contact Numbrt</center></td>
-						  <td>Dummy number</td>
+						  <td><center>Contact Number</center></td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="123dummy"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Facebook</center></td>
-						  <td>www.facebook.com/dummy</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="www.facebook.com/dummy"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Instagram</center></td>
-						  <td>www.instagram.com/dummy</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="www.instagram.com/dummy"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Twitter</center></td>
-						  <td>www.twitter.com/dummy</td>
+						  <td><input type="text" name="contact" class="w3-input" placeholder="www.facebook.com/twitter"></td>
 						</tr>
 					</table>
 					</div>
 					<br>
-					<center><button class="w3-button btncolorgreen">SAVE</button></center>
+					<center><button class="w3-button button">SAVE</button></center>
 	          </div>
         	</div>
 

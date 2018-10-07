@@ -20,7 +20,7 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
+		border-top: 10px solid #433124;
 		padding:5%;
 	}
 
@@ -62,14 +62,16 @@
 		display:block;
 		overflow-x:auto;
 	}
-	.btncolorgreen{
-		background: lightgreen;
-	}
-	.btncolorblue{
-		background: lightblue;
-	}
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
 	.modalcont{
-		padding: 3%;
+		padding: 5%;
 	}
 @media (min-width:601px){
 		.container2{
@@ -93,7 +95,7 @@
 
 	            <div class="tblresp">
 	            	<button onclick="document.getElementById('add').style.display='block'"
-								class="w3-button btncolorblue" style="float: right;">ADD</button>
+								class="w3-button button" style="float: right;">ADD</button>
 
 								<!-- The Modal -->
 								<div id="add" class="w3-modal">
@@ -113,7 +115,7 @@
 								      <p><input type="text" name="pword" class="w3-input" placeholder="PASSWORD"></p>
 								      <p><input type="text" name="cpword" class="w3-input" placeholder="CONFIRM PASSWORD"></p>
 								      <br><br>
-								      <center><button class="w3-button btncolorblue">ADD</button></center>
+								      <center><button class="w3-button button">ADD</button></center>
 								    </div>
 								  </div>
 								</div>
@@ -131,7 +133,8 @@
 						  <td>
 						  	<center>
 								<button onclick="document.getElementById('view').style.display='block'"
-								class="w3-button btncolorgreen">VIEW</button>
+								class="w3-button button">VIEW</button>
+						  	</center>
 
 								<!-- The Modal -->
 								<div id="view" class="w3-modal">
@@ -146,13 +149,10 @@
 								        <h5><b>CONTACT NUMBER:</b>&nbsp;Dummy contact</h5>
 								    </div>
 								  </div>
-								</div>
-						  		<br><br><button class="w3-button btncolorblue">DELETE</button>
-						  	</center>
+								</div><br>
+								<button class="w3-button button">DELETE</button>
 						  </td>
 						</tr>
-
-						
 					</table>
 					</div>
 	          </div>

@@ -7,14 +7,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   * {
-    font-family: "Times New Roman" !important;
+    font-family: "Calibri" !important;
+    color: #433124;
   }
   body{
-    background: #747d8c;
+    background: #f2ffef;
   }
 
   .topbar{
-    background: #2ed573;
+    background: #66aa52;
+    color: #fff;
   }
 
   .sidebar{
@@ -32,8 +34,8 @@
   }
 
   .links:hover{
-    background: #2f3542 !important;
-    color: #fff !important;
+    background: #b2d3a9 !important;
+    color: #433124 !important;
   }
 
 .accordion {
@@ -57,13 +59,24 @@
 a.panel:hover {
   /*  padding: 0 18px;*/
     display: none;
-    background-color: #343a40;
+    background-color: #b2d3a9;
     text-decoration: none !important;
+    color: #433124 !important;
 }
 
 .logo{
   width: 25%;
 }
+
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
+
 
 </style>
 <body>
@@ -71,11 +84,11 @@ a.panel:hover {
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large topbar" style="z-index:3">
   <button class="w3-bar-item w3-button   w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i></button>
-  <span class="w3-bar-item w3-right">Logout</span>
+  <button class="w3-button w3-right button">LOGOUT</button>
 </div>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse sidebar" style="z-index:3;width:300px; margin-top: -3px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse sidebar" style="z-index:3;width:300px; margin-top:-1px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s12 m12 l12">
       <!-- <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px"> -->
@@ -90,30 +103,27 @@ a.panel:hover {
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="index.php" class="w3-bar-item w3-button links">Dashboard</a>
     <a href="inquiry.php" class="w3-bar-item w3-button links">Inquiry</a>
-    <a href="reservation.php" class="w3-bar-item w3-button links">Reservation</a>
+    <a href="appointment.php" class="w3-bar-item w3-button links">Appointment</a>
     <a href="#" class="w3-bar-item accordion links">&nbsp;Content Management Sysytem</a>
       <div class="panel">
         <a href="cms_home.php" class="w3-bar-item links">Home</a>
-        <a href="cms_services.php" class="w3-bar-item links">Services</a>
         <a href="cms_gallery.php" class="w3-bar-item links">Gallery</a>
         <a href="cms_aboutus.php" class="w3-bar-item links">About Us</a>
         <a href="cms_contact.php" class="w3-bar-item links">Contact</a>
-        <a href="cms_testimonial.php" class="w3-bar-item links">Testimonial</a>
       </div>
-    <a href="#" class="w3-bar-item accordion links">&nbsp;File Maintainance</a>
+    <!-- <a href="#" class="w3-bar-item accordion links">&nbsp;File Maintainance</a>
       <div class="panel">
         <a href="#" class="w3-bar-item links">Services</a>
         <a href="category.php" class="w3-bar-item links">&nbsp;&nbsp;&nbsp;&nbsp;Category</a>
         <a href="services.php" class="w3-bar-item links">&nbsp;&nbsp;&nbsp;&nbsp;Services</a>
         <a href="therapist.php" class="w3-bar-item links">Therapists</a>
         <a href="clients.php" class="w3-bar-item links">Clients</a>
-      </div>
+      </div> -->
     <a href="#" class="w3-bar-item accordion links">&nbsp;Accounts</a>
       <div class="panel">
         <a href="acc_admin.php" class="w3-bar-item links">Admin</a>
         <a href="acc_customer.php" class="w3-bar-item links">Customer</a>
       </div>
-    <a href="useracc.php" class="w3-bar-item w3-button links">Audit Trail</a>
 </nav>
 
 

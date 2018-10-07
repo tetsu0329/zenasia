@@ -20,7 +20,7 @@
   }
   .box{
     background: #fff;
-    border-top: 10px solid #1e90ff;
+    border-top: 10px solid #433124;
     padding:5%;
   }
 
@@ -70,12 +70,14 @@
     border: 1px solid black;
     margin: 1%;
   }
-  .btncolorgreen{
-    background: lightgreen;
-  }
-  .btncolorblue{
-    background: lightblue;
-  }
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
 @media (min-width:601px){
     .container2{
       width:49.99999%;
@@ -95,7 +97,7 @@
       <div class="container1" style="margin-top: 10px;">
 
             <div class="wcontainer box">
-              <button class="w3-button btncolorblue" style="float: right;">ADD</button><br><br>
+              <button class="w3-button button" style="float: right;">ADD</button><br><br>
              <div class="w3-row-padding w3-margin-bottom">
               <div class="container4">
                   <div class="container1 galcont">
@@ -130,7 +132,7 @@
               </div>
            </div>
 
-           <center><button class="w3-button btncolorgreen">SAVE</button></center>
+           <center><button class="w3-button button">SAVE</button></center>
             </div>
 
 

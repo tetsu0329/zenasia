@@ -20,7 +20,7 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
+		border-top: 10px solid #433124;
 		padding:5%;
 	}
 
@@ -68,12 +68,14 @@
     padding: 5%;
 	}
 
-	.btncolorgreen{
-		background: lightgreen;
-	}
-	.btncolorblue{
-		background: lightblue;
-	}
+.button{
+  background: #b2d3a9 !important;
+  color: #433124;
+}
+.button:hover{
+  background: #433124 !important;
+  color: #b2d3a9 !important;
+}
 @media (min-width:601px){
 		.container2{
 			width:49.99999%;
@@ -96,7 +98,7 @@
 	            <div class="container1 aboutcont">
 	            	lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
 	            </div>
-	            <center><button class="w3-button btncolorgreen">SAVE</button></center>
+	            <center><button class="w3-button button">SAVE</button></center>
 	          </div>
         	</div>
 

@@ -20,8 +20,8 @@
 	}
 	.box{
 		background: #fff;
-		border-top: 10px solid #1e90ff;
-		padding:5%;
+		border-top: 10px solid #433124;
+		padding:10%;
 	}
 
 	.wcontainer:after, .wcontainer:before{
@@ -29,11 +29,10 @@
 	}
 	
 	.number{
-		color: #1e90ff;
+		color: #66aa52;
 		font-weight: bold;
 		}
 	.boxtitle{
-		color: #000;
 		font-weight: bold;
 	}
 @media (min-width:601px){
