@@ -85,6 +85,7 @@
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -99,16 +100,20 @@
 						<tr>
 						  <th><center>INQUIRY NO.</center></th>
 						  <th class="big"><center>SENDER</center></th>
-						  <th><center>MESSAGE STATUS</center></th>
+						  <th><center>MESSAGE DATE</center></th>
 						  <th class="big"><center>ACTIONS</center></th>
 						</tr>
+						<?php
+							$inquiry = mysqli_query($conn, "SELECT * FROM inquiry");
+							while($rows = mysqli_fetch_assoc($inquiry)){
+
+						?>
 						<tr>
-						  <td><center>001</center></td>
-						  <td>Dummy name</td>
-						  <td><center>Read</center></td>
+						  <td><center>INQ-<?php echo $rows['id'] ?></center></td>
+						  <td><?php echo $rows['name'] ?></td>
+						  <td><center><?php echo $rows['date'] ?></center></td>
 						  <td>
-						  	<center><button onclick="document.getElementById('view').style.display='block'"
-								class="w3-button button">VIEW</button></center>
+						  	<a href="?ViewID=<?php echo $rows['id'] ?>"><center><button class="w3-button button">VIEW</button></center></a>
 
 								<!-- The Modal -->
 								<div id="view" class="w3-modal">
@@ -118,18 +123,18 @@
 								      class="w3-button w3-display-topright">&times;</span>
 								      <h5>VIEW INQUIRY</h5>
 								      <hr>
-								      <h5><b>Sender:</b>&nbsp;Dummy name</h5>
-								      <h5><b>Email Address:</b>&nbsp;Dummy email</h5>
-								      <h5><b>Subject:</b>&nbsp;Dummy subject</h5>
-								      <h5><b>Date:</b>&nbsp;Dummy subject</h5>
+								      <h5><b>Sender:</b>&nbsp;<?php echo $rows2['name'] ?></h5>
+								      <h5><b>Email Address:</b>&nbsp;<?php echo $rows2['email'] ?></h5>
+								      <h5><b>Subject:</b>&nbsp;<?php echo $rows2['subject'] ?></h5>
+								      <h5><b>Date:</b>&nbsp;<?php echo $rows2['date'] ?></h5>
 								      <h5><b>Message:</b></h5>
-								      <h5>Dummy msg msg msg msg msg msg msg</h5>
+								      <h5><?php echo $rows2['body'] ?></h5>
 								    </div>
 								  </div>
 								</div>
 								<br>
-							<center><button onclick="document.getElementById('reply').style.display='block'"
-								class="w3-button button">REPLY</button></center>
+							<!-- <center><button onclick="document.getElementById('reply').style.display='block'" -->
+								<!-- class="w3-button button">REPLY</button></center> -->
 
 								<!-- The Modal -->
 								<div id="reply" class="w3-modal">
@@ -148,10 +153,12 @@
 								  </div>
 								</div>
 								<br>
-								<center><button class="w3-button button">DELETE</button></center>
+								<a onclick='javascript:confirmationDelete(this);return false;' href="?DeleteID=<?php echo $rows['id'] ?>"><center><button class="w3-button button">DELETE</button></center></a>
 						  </td>
 						</tr>
-						
+						<?php
+							}
+						?>
 					</table>
 					</div>
 	          </div>
@@ -162,7 +169,28 @@
 
 		</div>	
 	</div>
-
+	<script>
+		function confirmationDelete(anchor)
+		{
+			var conf = confirm('Are you sure want to delete this record?');
+			if(conf)
+					window.location=anchor.attr("href");
+		}
+		</script>
 </div>
 </body>
 </html>
+<?php
+	if(isset($_GET['ViewID'])){
+		echo "<script> var view_modal = document.getElementById('view'); </script>";
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	if(isset($_GET['DeleteID'])){
+		$messageID = $_GET['DeleteID'];
+		$query = mysqli_query($conn,"DELETE FROM inquiry WHERE id = $messageID")
+			 or die ("failed to query database". mysqli_error());
+			 echo"<script>
+			 alert('Deleted Succesfully');
+			 window.location.replace('inquiry.php');</script>";
+	}
+?>
