@@ -95,8 +95,8 @@
 	          <div class="wcontainer box">
 
 	            <div class="tblresp">
-	            	<button onclick="document.getElementById('add').style.display='block'"
-								class="w3-button button" style="float: right;">ADD</button>
+	            	<!-- <button onclick="document.getElementById('add').style.display='block'"
+								class="w3-button button" style="float: right;">ADD</button> -->
 
 								<!-- The Modal -->
 								<div id="add" class="w3-modal">
@@ -128,7 +128,7 @@
 						  <th><center>ACTIONS</center></th>
 						</tr>
 						<?php
-							$users = mysqli_query($conn, "SELECT * FROM accounts");
+							$users = mysqli_query($conn, "SELECT * FROM accounts WHERE type='' ");
 							while($rows = mysqli_fetch_assoc($users)){
 
 						?>
@@ -164,7 +164,7 @@
 										}
 									?>
 								</div><br>
-								<button class="w3-button button">DELETE</button>
+								<a href="?DeleteID=<?php echo $rows['id'] ?>"><button class="w3-button button">DELETE</button></a>
 						  </td>
 						</tr>
 						<?php
@@ -188,5 +188,13 @@
 	if(isset($_GET['ViewID'])){
 		echo "<script> var view_modal = document.getElementById('view'); </script>";
 		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	if(isset($_GET['DeleteID'])){
+		$messageID = $_GET['DeleteID'];
+		$query = mysqli_query($conn,"UPDATE accounts SET type = 'deleted' WHERE id = $messageID")
+			 or die ("failed to query database". mysqli_error());
+			 echo"<script>
+			 alert('Deleted Succesfully');
+			 window.location.replace('acc_customer.php');</script>";
 	}
 ?>

@@ -1,5 +1,9 @@
 <?php
+  session_start();
   include ("connection/connection.php");
+	if(empty($_SESSION['zenadmin'])){
+        echo "<script>window.location.replace('login.php')</script>";
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,7 +90,7 @@ a.panel:hover {
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large topbar" style="z-index:3">
   <button class="w3-bar-item w3-button   w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i></button>
-  <button class="w3-button w3-right button">LOGOUT</button>
+  <a href="logout.php"><button class="w3-button w3-right button">LOGOUT</button></a>
 </div>
 
 <!-- Sidebar/menu -->
@@ -108,7 +112,7 @@ a.panel:hover {
     <a href="appointment.php" class="w3-bar-item w3-button links">Appointment</a>
     <a href="#" class="w3-bar-item accordion links">&nbsp;Content Management Sysytem</a>
       <div class="panel">
-        <a href="cms_home.php" class="w3-bar-item links">Home</a>
+        <!-- <a href="cms_home.php" class="w3-bar-item links">Home</a> -->
         <a href="cms_gallery.php" class="w3-bar-item links">Gallery</a>
         <a href="cms_aboutus.php" class="w3-bar-item links">About Us</a>
         <a href="cms_contact.php" class="w3-bar-item links">Contact</a>

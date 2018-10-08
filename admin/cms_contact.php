@@ -1,4 +1,7 @@
-<?php include ("../admin/navigation.php"); ?>
+<?php 
+	include ("../admin/navigation.php"); 
+	include ("connection/connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,6 +83,7 @@
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -87,7 +91,10 @@
 		<div class="container1">
 			<h1 class="title">CONTENT MANAGEMENT | CONTACT</h1>
 			<div class="container1" style="margin-top: 10px;">
-
+			<?php
+				$contact = mysqli_query($conn, "SELECT * FROM contact");
+				$rows = mysqli_fetch_assoc($contact);
+			?>
 	          <div class="wcontainer box">
 	            <div class="tblresp">
 					<table class="table">
@@ -95,48 +102,48 @@
 						  <th><center>CONTACT INFORMATION</center></th>
 						  <th class="big">DETAILS</th>
 						</tr>
-
+						<form action="" method="POST">
 						<tr>
 						  <td><center>Contact Person</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy name"></td>
+						  <td><input type="text" name="person" class="w3-input" placeholder="Dummy name" value="<?php echo $rows['person'] ?>"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Address</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy address"></td>
+						  <td><input type="text" name="address" class="w3-input" placeholder="Dummy address" value="<?php echo $rows['address'] ?>"></td>
 						</tr>
 						
 						<tr>
 						  <td><center>Email Address</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="Dummy email"></td>
+						  <td><input type="text" name="email" class="w3-input" placeholder="Dummy email" value="<?php echo $rows['email'] ?>"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Contact Number</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="123dummy"></td>
+						  <td><input type="text" name="contactnum" class="w3-input" placeholder="123dummy" value="<?php echo $rows['contactnum'] ?>"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Facebook</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="www.facebook.com/dummy"></td>
+						  <td><input type="text" name="fb" class="w3-input" placeholder="www.facebook.com/dummy" value="<?php echo $rows['fb'] ?>"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Instagram</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="www.instagram.com/dummy"></td>
+						  <td><input type="text" name="ig" class="w3-input" placeholder="www.instagram.com/dummy" value="<?php echo $rows['ig'] ?>"></td>
 						</tr>
 
 						<tr>
 						  <td><center>Twitter</center></td>
-						  <td><input type="text" name="contact" class="w3-input" placeholder="www.facebook.com/twitter"></td>
+						  <td><input type="text" name="tw" class="w3-input" placeholder="www.facebook.com/twitter" value="<?php echo $rows['tw'] ?>"></td>
 						</tr>
 					</table>
 					</div>
 					<br>
-					<center><button class="w3-button button">SAVE</button></center>
+					<center><input type="submit" name="submitbtn" class="w3-button button" value="SAVE"></center>
 	          </div>
         	</div>
-
+					</form>
         	
 
 
@@ -146,3 +153,26 @@
 </div>
 </body>
 </html>
+<?php
+if(isset($_POST['submitbtn'])){
+	$person = $_POST['person'];
+	$address = $_POST['address'];
+	$email = $_POST['email'];
+	$contactnum = $_POST['contactnum'];
+	$fb = $_POST['fb'];
+	$ig = $_POST['ig'];
+	$tw = $_POST['tw'];
+
+	$query = mysqli_query($conn,"UPDATE contact SET person = '$person',
+																								address = '$address',
+																								email = '$email',
+																								contactnum = '$contactnum',
+																								fb = '$fb',
+																								ig = '$ig',
+																								tw = '$tw'")
+		 or die ("failed to query database". mysqli_error());
+		 echo"<script>
+		 alert('Contact updated Succesfully');
+		 window.location.replace('cms_contact.php');</script>";
+}
+?>

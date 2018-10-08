@@ -1,4 +1,7 @@
-<?php include ("../admin/navigation.php"); ?>
+<?php 
+	include ("../admin/navigation.php"); 
+	include ("connection/connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,6 +89,7 @@
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -95,10 +99,14 @@
 			<div class="container1" style="margin-top: 10px;">
 
 	          <div class="wcontainer box">
-	            <div class="container1 aboutcont">
-	            	lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
-	            </div>
-	            <center><button class="w3-button button">SAVE</button></center>
+			  <?php
+			  $query = mysqli_query($conn, "SELECT * FROM about");
+			  $about = mysqli_fetch_assoc($query);
+			  ?>
+			  <form action="" method="POST">
+	            	<textarea class="container1 aboutcont" style="width:1100px" name="body"><?php echo $about['body']?></textarea>
+	            <center><input type="submit" name="submitbtn" class="w3-button button" value="SAVE"></center>
+				</form>
 	          </div>
         	</div>
 
@@ -111,3 +119,13 @@
 </div>
 </body>
 </html>
+<?php
+if(isset($_POST['submitbtn'])){
+	$messageID = $_POST['body'];
+	$query = mysqli_query($conn,"UPDATE about SET body = '$messageID'")
+		 or die ("failed to query database". mysqli_error());
+		 echo"<script>
+		 alert('About updated Succesfully');
+		 window.location.replace('cms_aboutus.php');</script>";
+}
+?>
