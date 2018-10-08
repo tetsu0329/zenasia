@@ -1,3 +1,7 @@
+  <?php
+    session_start();
+    include ("admin/connection/connection.php");
+  ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,8 +48,19 @@
       <a href="calendar2.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink">Calendar</a>
       <a href="appointment2.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink">Appointment</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink isDisabled">|</a>
+      <?php
+        if(empty($_SESSION['cname'])){
+      ?>
       <a href="login.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink">Login</a>
       <a href="register.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink">Register</a>
+      <?php
+        }
+        else{
+    ?>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large navlink"><?php echo $_SESSION['cname'] ?></a>
+    <?php
+        }
+    ?>
     </div>
     
 
@@ -63,8 +78,19 @@
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large navlink">Calendar</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large navlink">Appointment</a>
     <hr>
+    <?php
+        if(empty($_SESSION['cname'])){
+    ?>
     <a href="#" class="w3-bar-item w3-button w3-padding-large navlink">Login</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large navlink">Register</a>
+    <?php
+        }
+        else{
+    ?>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large navlink"><?php echo $_SESSION['cname'] ?></a>
+    <?php
+        }
+    ?>
   </div>
 </div>
 

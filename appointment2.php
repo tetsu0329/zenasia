@@ -1,5 +1,5 @@
 <?php
-include 'nav.php'
+include 'nav.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -122,6 +122,7 @@ include 'nav.php'
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 <div class="wrapper">

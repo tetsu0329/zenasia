@@ -58,6 +58,7 @@ include 'nav.php'
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 <div class="wrapper">
@@ -65,11 +66,13 @@ include 'nav.php'
 <!-- title  -->
 	<div class=" w3-container ourserviceshome" style="padding:50px 16px;margin-top: 40px;"><h2 class="title">OUR STORY</h2></div>
 <!-- about us -->
+			<?php
+			  $query = mysqli_query($conn, "SELECT * FROM about");
+			  $about = mysqli_fetch_assoc($query);
+			  ?>
 <div class=" w3-container ourstoryhome">
 	<div class="box">
-	<h5 class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
-
-	Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</h5>
+	<h5 class="desc"><?php echo $about['body']?></h5>
 	</div>
 </div>
 

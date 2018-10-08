@@ -1,5 +1,5 @@
 <?php
-
+include ('session.php');
 if (isset($_POST['submit'])) {
   include 'connection.php';
   $personnel = $_POST['personnel'];

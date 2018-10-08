@@ -87,6 +87,7 @@ include 'nav.php'
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 <div class="wrapper">
@@ -98,27 +99,32 @@ include 'nav.php'
 	<br>
 	<div class="container contboxmain">
     	<div class="container2 contactbox">
+			<?php
+				$contact = mysqli_query($conn, "SELECT * FROM contact");
+				$rows = mysqli_fetch_assoc($contact);
+			?>
     		<center>
-	    		<a href="">Facebook</a> |
-	    		<a href="">Twitter</a> |
-	    		<a href="">Instagram</a>
+	    		<a href="<?php echo $rows['fb'] ?>">Facebook</a> |
+	    		<a href="<?php echo $rows['tw'] ?>">Twitter</a> |
+	    		<a href="<?php echo $rows['ig'] ?>">Instagram</a>
     		</center>
     		<br>
-    		<label>Contact Person</label><p>&nbsp;&nbsp;&nbsp;Dummy Name</p>
-    		<label>Contact Address</label><p>&nbsp;&nbsp;&nbsp;Dummy address address address</p>
-    		<label>Email Address</label><p>&nbsp;&nbsp;&nbsp;dummyemail@dummy.com</p>
-    		<label>Contact Number</label><p>&nbsp;&nbsp;&nbsp;dummy123</p>
+    		<label>Contact Person</label><p>&nbsp;&nbsp;&nbsp;<?php echo $rows['person'] ?></p>
+    		<label>Contact Address</label><p>&nbsp;&nbsp;&nbsp;<?php echo $rows['address'] ?></p>
+    		<label>Email Address</label><p>&nbsp;&nbsp;&nbsp;<?php echo $rows['email'] ?></p>
+    		<label>Contact Number</label><p>&nbsp;&nbsp;&nbsp;<?php echo $rows['contactnum'] ?></p>
     	</div>
 
     	<div class="container2 inq">
     		<h5>Leave us a message! :)</h5>
     		<hr>
-    		<p><input type="text" name="fname" class="w3-input"><span style="font-size: 12px;">Fullname</span></p>
-    		<p><input type="text" name="emailaddress" class="w3-input"><span style="font-size: 12px;">Email Address</span></p>
-    		<p><input type="text" name="subj" class="w3-input"><span style="font-size: 12px;">Subject</span></p>
-    		<p><input type="text" name="msg" class="w3-input"><span style="font-size: 12px;">Message</span></p>
+			<form action="" METHOD="POST">
+    		<p><input type="text" name="name" class="w3-input"><span style="font-size: 12px;">Fullname</span></p>
+    		<p><input type="text" name="email" class="w3-input"><span style="font-size: 12px;">Email Address</span></p>
+    		<p><input type="text" name="subject" class="w3-input"><span style="font-size: 12px;">Subject</span></p>
+    		<p><input type="text" name="body" class="w3-input"><span style="font-size: 12px;">Message</span></p>
 
-    		<center><a href="#" style="text-decoration: none;">SEND</a></center>
+    		<center><input type="submit" name="submitinqbtn" style="text-decoration: none;" value="SEND"></center>
     	</div>
 
 
@@ -133,4 +139,19 @@ include 'nav.php'
 
 <?php
 include ('footer.php');
+?>
+<?php
+if(isset($_POST['submitinqbtn'])){
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$subject = $_POST['subject'];
+	$body = $_POST['body'];
+	date_default_timezone_set("Asia/Manila");
+	$date= date("M-d-Y");
+
+	$insertsql = mysqli_query($conn, "INSERT INTO inquiry (email, name, body, date, subject)
+										VALUE('$email','$name','$body', '$date', '$subject')")
+										or die ("failed to query database". mysqli_error());
+	echo "<script>alert('Sent Successfully')</script>";
+}
 ?>

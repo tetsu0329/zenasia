@@ -69,6 +69,7 @@ input{
         .container4{
             width:24.99999%;
         }
+}
 </style>
 <body>
     <div class="w3-main">
@@ -123,8 +124,10 @@ input{
         or die("failed to query database". mysqli_error());
         
         $_SESSION['email'] = $email;
+        $_SESSION['cid'] = $idd;
+        $_SESSION['cname'] = $name;
         echo "<script>alert('Registered Successfully');
-        window.location.replace('appointment.php');</script>";
+        window.location.replace('appointment2.php');</script>";
         
     }
 ?>

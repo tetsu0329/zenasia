@@ -1,10 +1,10 @@
 <?php
-session_start();
+// session_start();
 
 if (!isset($_SESSION['email'])) {
 	
-	//  echo "Access Denied!";
-	// exit;
+	echo "<script>alert('Please login first');
+	window.location.replace('login.php');</script>";
 	// $idd = $_SESSION['email'];
 	
 

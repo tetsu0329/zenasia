@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('connection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,21 +62,51 @@ input{
 		.container4{
 			width:24.99999%;
 		}
+}
 </style>
 <body>
 	<div class="w3-main">
 		<div class="container2">&nbsp;</div>
 		<div class="container2">	
 			<div class="loginbox">
+			<form action="" method="POST">
 				<br>
 				<h6 style="font-size: 10px;">Zen Asia</h6>	
 				<h4>Sign in to your Account ~</h4>
-				<p><input type="text" name="uname" placeholder="Username" class="w3-input"></p>
-				<p><input type="text" name="uname" placeholder="Password" class="w3-input"></p>
+				<p><input type="text" name="uname" placeholder="Email" class="w3-input"></p>
+				<p><input type="password" name="pword" placeholder="Password" class="w3-input"></p>
 				<br><br>
-				<center><button class="w3-button button">LOGIN</button></center>
+				<center><input type="submit" name="loginbtn" class="w3-button button" value="LOGIN"></center>
+			</form>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+<?php
+if(isset($_POST['loginbtn'])){
+    $uname = $_POST['uname'];
+    $pword = $_POST['pword'];
+
+    $result = mysqli_query($connect,"SELECT * FROM accounts WHERE email = '$uname' AND password = '$pword'")
+            or die ("failed to query database". mysqli_error());
+    $results = mysqli_fetch_assoc($result);
+    $numrows = mysqli_num_rows($result);
+    if($numrows==1){
+		$_SESSION['cname'] = $results['fullname'];
+		$_SESSION['email'] = $results['email'];
+		$email = $results['email'];
+        $_SESSION['cid'] = $results['id'];
+        echo"<script type='text/javascript'>alert('Login Successful'); 
+        window.location='appointment2.php';
+        </script>";
+    }
+    else{
+		// echo "<script> var view_incorrect = document.getElementById('incorrect'); </script>";
+		// echo "<script> view_incorrect.style,display='block'; </script>";
+        echo"<script type='text/javascript'>alert('Incorrect username or password'); 
+        window.location='login.php';
+        </script>";
+    }
+}
+?>

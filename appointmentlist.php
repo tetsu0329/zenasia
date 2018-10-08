@@ -1,4 +1,6 @@
-
+<?php
+	include ("session.php");
+?>
 <!-- END NAV -->
 <div style="padding: 1.1%;">
 	<div class="columns">
