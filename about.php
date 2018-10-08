@@ -30,7 +30,6 @@ include 'nav.php'
 	.ourserviceshome{
 		background: #b2d3a9 !important;
 		text-align: center;
-		padding-top: 5%;
 		padding-bottom: 2%;
 	}
 
@@ -64,7 +63,7 @@ include 'nav.php'
 <div class="wrapper">
 
 <!-- title  -->
-	<div class=" w3-container ourserviceshome"><h2 class="title">OUR STORY</h2></div>
+	<div class=" w3-container ourserviceshome" style="padding:50px 16px;margin-top: 40px;"><h2 class="title">OUR STORY</h2></div>
 <!-- about us -->
 <div class=" w3-container ourstoryhome">
 	<div class="box">

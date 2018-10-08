@@ -67,6 +67,16 @@ include 'nav.php'
 		color: #0c3302;
 		font-weight: bold;
 	}
+
+	.inq{
+		padding: 2%;
+	}
+	a{
+		text-decoration: none;
+	}
+	.contboxmain{
+		padding: 3.5%;
+	}
 @media (min-width:601px){
 		.container2{
 			width:49.99999%;
@@ -86,33 +96,29 @@ include 'nav.php'
 <!-- gallery-->
 <div class=" w3-container gallery">
 	<br>
-	<div class="container">
+	<div class="container contboxmain">
     	<div class="container2 contactbox">
     		<center>
-	    		<a href="">Facebook</a>
-	    		<a href="">Twitter</a>
+	    		<a href="">Facebook</a> |
+	    		<a href="">Twitter</a> |
 	    		<a href="">Instagram</a>
     		</center>
     		<br>
-    		<div class="container2">
-    			<label>Contact Person</label><p>Dummy Name</p>
-    		</div>
-
-    		<div class="container2">
-    			<label>Contact Address</label><p>Dummy address address address</p>
-    		</div>
-
-    		<div class="container2">
-    			<label>Email Address</label><p>dummyemail@dummy.com</p>
-    		</div>
-
-    		<div class="container2">
-    			<label>Contact Number</label><p>dummy123</p>
-    		</div>
+    		<label>Contact Person</label><p>&nbsp;&nbsp;&nbsp;Dummy Name</p>
+    		<label>Contact Address</label><p>&nbsp;&nbsp;&nbsp;Dummy address address address</p>
+    		<label>Email Address</label><p>&nbsp;&nbsp;&nbsp;dummyemail@dummy.com</p>
+    		<label>Contact Number</label><p>&nbsp;&nbsp;&nbsp;dummy123</p>
     	</div>
 
-    	<div class="container2">
-    		<h5>Leave us a message!</h5>
+    	<div class="container2 inq">
+    		<h5>Leave us a message! :)</h5>
+    		<hr>
+    		<p><input type="text" name="fname" class="w3-input"><span style="font-size: 12px;">Fullname</span></p>
+    		<p><input type="text" name="emailaddress" class="w3-input"><span style="font-size: 12px;">Email Address</span></p>
+    		<p><input type="text" name="subj" class="w3-input"><span style="font-size: 12px;">Subject</span></p>
+    		<p><input type="text" name="msg" class="w3-input"><span style="font-size: 12px;">Message</span></p>
+
+    		<center><a href="#" style="text-decoration: none;">SEND</a></center>
     	</div>
 
 
