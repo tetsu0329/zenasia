@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('connection.php');
+include('nav.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,7 +77,9 @@ input{
 				<p><input type="text" name="uname" placeholder="Email" class="w3-input"></p>
 				<p><input type="password" name="pword" placeholder="Password" class="w3-input"></p>
 				<br><br>
-				<center><input type="submit" name="loginbtn" class="w3-button button" value="LOGIN"></center>
+				<center><input type="submit" name="loginbtn" class="w3-button button" value="LOGIN"><br>
+					<p>Still don't have an account? <a href="register.php"><b><i>Register here.</i></b></a></p></center>
+
 			</form>
 			</div>
 		</div>

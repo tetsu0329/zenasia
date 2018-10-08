@@ -124,7 +124,7 @@ include 'nav.php'
     		<p><input type="text" name="subject" class="w3-input"><span style="font-size: 12px;">Subject</span></p>
     		<p><input type="text" name="body" class="w3-input"><span style="font-size: 12px;">Message</span></p>
 
-    		<center><input type="submit" name="submitinqbtn" style="text-decoration: none;" value="SEND"></center>
+    		<center><input type="submit" name="submitinqbtn" style="text-decoration: none; box-shadow: none; border: none; background: transparent; cursor: pointer;" value="SEND"></center>
     	</div>
 
 

@@ -82,8 +82,10 @@ include 'nav.php'
 		<div class="column" >
 			<div class="has-text-centered">
 				<br>
-				<b style='background: lightblue; padding: 15px;'>&nbsp;&nbsp; Available appointment &nbsp;&nbsp;</b>
-				<b style='background: firebrick; padding: 15px; color: white;'>&nbsp;Unavailable appointment</b>
+				<center>
+				<b style='background: lightblue; padding: 15px;'>Available</b>
+				<b style='background: firebrick; padding: 15px; color: white;'>Unavailable</b>
+			</center>
 			</div>
 			<div id="calendar_div">
 				<?php

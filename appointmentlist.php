@@ -2,6 +2,21 @@
 	include ("session.php");
 ?>
 <!-- END NAV -->
+<style type="text/css">
+	table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+
+}
+
+th{
+	background: #66aa52;
+	color: #fff;
+}
+</style>
 <div style="padding: 1.1%;">
 	<div class="columns">
 		<div class="column">
@@ -16,7 +31,7 @@
 								<div class="column is-half">
 									<div class="field">
 										<p class="control">
-											<input type="text" id="myInput" class="input" onkeyup="myFunctionSearch()" placeholder="Search for Transac ID.." title="Type in a name">
+											<input type="text" id="myInput" class="input w3-input" onkeyup="myFunctionSearch()" placeholder="Search for Transac ID.." title="Type in a name">
 										</p>
 									</div>
 								</div>
@@ -26,7 +41,7 @@
 									<div class="field">
 										<p class="control">
 											<div class="select">
-												<select id="mySelect" onchange="myFunctionSelect()">
+												<select id="mySelect" onchange="myFunctionSelect()" class="w3-input">
 													<option value="Pending">Pending</option>
 													<option value="Validated">Validated</option>
 													<option value="Cancelled">Cancelled</option>
@@ -38,7 +53,7 @@
 								</div>
 							</div>
 							<div style="overflow: auto;">  
-								<table id="myTable" class="table is-responsive is-fullwidth is-hoverable">
+								<table id="myTable" class="table is-responsive is-fullwidth is-hoverable w3-table">
 									<thead>
 										<tr>
 											<th>Transac ID</th>
