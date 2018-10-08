@@ -117,6 +117,12 @@
 
 								<!-- The Modal -->
 								<div id="view" class="w3-modal">
+									<?php
+										$idd = $_GET['ViewID'];
+										$inquiry2 = mysqli_query($conn, "SELECT * FROM inquiry where id = $idd");
+										while($rows2 = mysqli_fetch_assoc($inquiry2)){
+
+									?>
 								  <div class="w3-modal-content">
 								    <div class="w3-container modalcont">
 								      <span onclick="document.getElementById('view').style.display='none'" 
@@ -131,6 +137,9 @@
 								      <h5><?php echo $rows2['body'] ?></h5>
 								    </div>
 								  </div>
+									<?php
+										}
+									?>
 								</div>
 								<br>
 							<!-- <center><button onclick="document.getElementById('reply').style.display='block'" -->

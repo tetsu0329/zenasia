@@ -123,7 +123,7 @@ a.panel:hover {
       </div> -->
     <a href="#" class="w3-bar-item accordion links">&nbsp;Accounts</a>
       <div class="panel">
-        <a href="acc_admin.php" class="w3-bar-item links">Admin</a>
+        <!-- <a href="acc_admin.php" class="w3-bar-item links">Admin</a> -->
         <a href="acc_customer.php" class="w3-bar-item links">Customer</a>
       </div>
 </nav>

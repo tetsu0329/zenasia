@@ -1,4 +1,7 @@
-<?php include ("../admin/navigation.php"); ?>
+<?php 
+	include ("../admin/navigation.php"); 
+	include ('connection/connection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +48,7 @@
 		.container4{
 			width:24.99999%;
 		}
+	}
 </style>
 <body>
 	<!-- !PAGE CONTENT! -->
@@ -53,28 +57,28 @@
 			<h1 class="title">Dashboard</h1>
 			<div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
-	           <h1 class="number">4</h1>
+	           <h1 class="number"><?php echo $user ?></h1>
 	           <h2 class="boxtitle">Users</h2>
 	          </div>
         	</div>
 
         	<div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
-	           <h1 class="number">12</h1>
+	           <h1 class="number"><?php echo $appointment ?></h1>
 	           <h2 class="boxtitle">Appointment</h2>
 	          </div>
         	</div>
 
         	<div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
-	           <h1 class="number">14</h1>
+	           <h1 class="number"><?php echo $inquiry ?></h1>
 	           <h2 class="boxtitle">Inquiry</h2>
 	          </div>
         	</div>
 
         	<div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
-	           <h1 class="number">18</h1>
+	           <h1 class="number"><?php echo $services ?></h1>
 	           <h2 class="boxtitle">Services</h2>
 	          </div>
         	</div>

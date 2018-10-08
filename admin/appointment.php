@@ -118,7 +118,7 @@
 						  <td><center><?php echo $rows['hours'] ?></center></td>
 						  <td><center><?php echo $rows['status'] ?></center></td>
 						  <td>
-							<center><button class="w3-button button">CANCEL</button></center>
+							<a href="?AppointID=<?php echo $rows['transacId'] ?>"><center><button class="w3-button button">CANCEL</button></center></a>
 						  </td>
 						</tr>
 						<?php	
@@ -138,3 +138,11 @@
 </div>
 </body>
 </html>
+<?php
+	if(isset($_GET['AppointID'])){
+		$id2 = $_GET['AppointID'];
+		$update = mysqli_query($conn, "UPDATE appointment SET status = 'cancelled' where transacId = '$id2'");
+		echo "<script>alert('Transaction has been cancelled');
+		window.location.replace('appointment.php');</script>";
+	}
+?>
