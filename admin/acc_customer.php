@@ -133,27 +133,36 @@
 
 						?>
 						<tr>
-						  <td>Dummy name</td>
-						  <td>dummyemail@email.com</td>
+						  <td><?php echo $rows['fullname'] ?></td>
+						  <td><?php echo $rows['fullname'] ?></td>
 						  <td>
 						  	<center>
-								<button onclick="document.getElementById('view').style.display='block'"
-								class="w3-button button">VIEW</button>
+								<a href="?ViewID=<?php echo $rows['id'] ?>"><button 
+								class="w3-button button">VIEW</button></a>
 						  	</center>
 
 								<!-- The Modal -->
 								<div id="view" class="w3-modal">
+								<?php
+										$idd = $_GET['ViewID'];
+										$users2 = mysqli_query($conn, "SELECT * FROM accounts WHERE id = $idd");
+										while($rows2 = mysqli_fetch_assoc($users2)){
+
+									?>
 								  <div class="w3-modal-content">
 								    <div class="w3-container modalcont">
 								      <span onclick="document.getElementById('view').style.display='none'" 
 								      class="w3-button w3-display-topright">&times;</span>
 								      <h5>VIEW USER</h5>
 								      <hr>
-								      <h5><b>FULLNAME:</b>&nbsp;Dummy name</h5>
-								       <h5><b>EMAIL ADDRESS:</b>&nbsp;Dummy email</h5>
-								        <h5><b>CONTACT NUMBER:</b>&nbsp;Dummy contact</h5>
+								      <h5><b>FULLNAME:</b>&nbsp;<?php echo $rows2['fullname'] ?></h5>
+								       <h5><b>EMAIL ADDRESS:</b>&nbsp;<?php echo $rows2['email'] ?></h5>
+								        <h5><b>CONTACT NUMBER:</b>&nbsp;<?php echo $rows2['phone'] ?></h5>
 								    </div>
 								  </div>
+									<?php
+										}
+									?>
 								</div><br>
 								<button class="w3-button button">DELETE</button>
 						  </td>
@@ -175,3 +184,9 @@
 </div>
 </body>
 </html>
+<?php
+	if(isset($_GET['ViewID'])){
+		echo "<script> var view_modal = document.getElementById('view'); </script>";
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+?>
