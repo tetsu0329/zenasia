@@ -1,6 +1,8 @@
 <?php
     session_start();
     include('connection.php');
+include('nav.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,8 +88,11 @@ input{
                     <p><input type="text" name="address" class="w3-input"><span style="font-size: 12px;">Address</span></p>
                     <p><input type="password" name="password" class="w3-input"><span style="font-size: 12px;">Password</span></p>
                     <p><input type="text" name="gender" class="w3-input"><span style="font-size: 12px;">Gender</span></p>
-                    <br>
-                    <center> <input type="submit" name="registerbtn" value="Register" class="w3-button button"></center>
+                    <center><input type="submit" name="registerbtn" value="Register" class="w3-button button"><br>
+                    <p>Already have an account? <a href="login.php"><b><i>Login here.</i></b></a></p></center>
+
+
+                    </center>
                 </form>
                 
             </div>
