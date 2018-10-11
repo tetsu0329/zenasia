@@ -2,10 +2,10 @@
     $conn = mysqli_connect("localhost", "root", "", "db_appointment");
 
 
-    $usersquery = mysqli_query($conn, "SELECT * FROM accounts");
+    $usersquery = mysqli_query($conn, "SELECT * FROM accounts WHERE type=''");
     $user = mysqli_num_rows($usersquery);
 
-    $appointmentquery = mysqli_query($conn, "SELECT * FROM appointment");
+    $appointmentquery = mysqli_query($conn, "SELECT * FROM appointment WHERE status='pending'");
     $appointment = mysqli_num_rows($appointmentquery);
 
     $inquiryquery = mysqli_query($conn, "SELECT * FROM inquiry");

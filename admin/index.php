@@ -55,33 +55,33 @@
 	<div class="w3-main" style="margin-left:300px;margin-top:43px;">
 		<div class="container1">
 			<h1 class="title">Dashboard</h1>
-			<div class="container4" style="margin-top: 10px;">
+			<a href="acc_customer.php"><div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
 	           <h1 class="number"><?php echo $user ?></h1>
 	           <h2 class="boxtitle">Users</h2>
 	          </div>
-        	</div>
+        	</div></a>
 
-        	<div class="container4" style="margin-top: 10px;">
+        	<a href="appointment.php"><div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
 	           <h1 class="number"><?php echo $appointment ?></h1>
 	           <h2 class="boxtitle">Appointment</h2>
 	          </div>
-        	</div>
+        	</div></a>
 
-        	<div class="container4" style="margin-top: 10px;">
+        	<a href="inquiry.php"><div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
 	           <h1 class="number"><?php echo $inquiry ?></h1>
 	           <h2 class="boxtitle">Inquiry</h2>
 	          </div>
-        	</div>
+        	</div></a>
 
-        	<div class="container4" style="margin-top: 10px;">
+        	<a href="#"><div class="container4" style="margin-top: 10px;">
 	          <div class="wcontainer box">
 	           <h1 class="number"><?php echo $services ?></h1>
 	           <h2 class="boxtitle">Services</h2>
 	          </div>
-        	</div>
+        	</div></a>
 
 
 		</div>	
